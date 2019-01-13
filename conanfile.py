@@ -34,6 +34,5 @@ class Conan(ConanFile):
         self.copy(pattern="*.a", dst="lib", keep_path=False)
 
     def package_info(self):
-        self.cpp_info.includedirs = ['include']
-        self.cpp_info.libs = ["crossguid-dbg" if self.settings.build_type == "Debug" else "crossguid"]
+        self.cpp_info.libs = ["crossguid-dgb" if self.settings.build_type == "Debug" else "crossguid"]
 
