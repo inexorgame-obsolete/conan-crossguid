@@ -16,7 +16,7 @@ class Conan(ConanFile):
             self.requires("libuuid/1.0.3@bincrafters/stable")
 
     def source(self):
-        git = tools.Git()
+        git = tools.Git("crossguid")
         git.clone("https://github.com/graeme-hill/crossguid")
         git.checkout("b151b7d1aeb68c4b9e98a8a2e0a547885aa0b60c")
         tools.replace_in_file("crossguid/CMakeLists.txt", "project(CrossGuid)", '''project(CrossGuid)
