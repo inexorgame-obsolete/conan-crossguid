@@ -4,7 +4,7 @@ import os
 
 class Conan(ConanFile):
     name = "crossguid"
-    version = "latest-at-28-12-18"
+    version = "06-03-19"
     license = "MIT"
     settings = "os", "arch", "compiler", "build_type"
     generators = "cmake"
@@ -17,8 +17,8 @@ class Conan(ConanFile):
 
     def source(self):
         git = tools.Git("crossguid")
-        git.clone("https://github.com/graeme-hill/crossguid")
-        git.checkout("b151b7d1aeb68c4b9e98a8a2e0a547885aa0b60c")
+        git.clone("https://github.com/inexorgame/crossguid")
+        git.checkout("0ec64e3b4d44a49b3127ba12914a48fb834976ff")
         tools.replace_in_file("crossguid/CMakeLists.txt", "project(CrossGuid)", '''project(CrossGuid)
         include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
         conan_basic_setup()''')
